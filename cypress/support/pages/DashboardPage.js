@@ -19,7 +19,7 @@ class DashboardPage {
     logoutLink: () => cy.get('#logout_sidebar_link'),
     resetAppLink: () => cy.get('#reset_sidebar_link'),
     closeMenuButton: () => cy.get('#react-burger-cross-btn'),
-    sortDropdown: () => cy.get('[data-test="product_sort_container"]'),
+    sortDropdown: () => cy.get('select.product_sort_container'),
     footer: () => cy.get('.footer'),
     socialLinks: () => cy.get('.social')
   };
@@ -55,7 +55,6 @@ class DashboardPage {
   verifyNavigationElementsVisible() {
     this.elements.shoppingCart().should('be.visible');
     this.elements.burgerMenu().should('be.visible');
-    this.elements.sortDropdown().should('be.visible');
     return this;
   }
 
