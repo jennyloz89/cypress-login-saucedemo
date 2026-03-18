@@ -3,6 +3,9 @@
 // Se ejecuta antes de cada archivo de prueba
 // ***********************************************************
 
+// Reporter HTML (Mochawesome)
+import 'cypress-mochawesome-reporter/register';
+
 // Importar comandos personalizados
 import './commands';
 

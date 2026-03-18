@@ -33,9 +33,12 @@ cypress-login-saucedemo/
 │   │       ├── LoginPage.js
 │   │       └── DashboardPage.js
 │   │
+│   ├── reports/                      # Reporte HTML (Mochawesome)
 │   ├── screenshots/                  # Screenshots automáticos
 │   └── videos/                       # Videos de ejecución
 │
+├── .github/workflows/                # CI/CD (GitHub Actions)
+│   └── cypress.yml
 ├── cypress.config.js                 # Configuración de Cypress
 ├── package.json                      # Dependencias
 └── README.md                         # Documentación
@@ -83,8 +86,21 @@ npm run cy:firefox
 
 ## 📊 Reportes
 
+- **Reporte HTML (Mochawesome):** Tras `npm run cy:run` o `npm run cy:report`, se genera un reporte en `cypress/reports/`. Abre el archivo HTML para ver resultados, gráficos, duración y screenshots embebidos.
 - **Screenshots:** Se generan automáticamente cuando un test falla. Se guardan en `cypress/screenshots/`
 - **Videos:** Se graban automáticamente durante la ejecución en modo headless. Se guardan en `cypress/videos/`
+
+## 🔄 CI/CD (GitHub Actions)
+
+El proyecto incluye un workflow en `.github/workflows/cypress.yml` que:
+
+- Se ejecuta en cada **push** y **pull request** a `main` o `master`
+- Instala dependencias con `npm ci`
+- Ejecuta las pruebas con Cypress
+- Sube el **reporte HTML** como artefacto (descargable en la pestaña *Actions* → ejecución → *Artifacts*)
+- Sube **screenshots** si hay fallos (retención 7 días)
+
+Para ejecutar el workflow manualmente: **Actions** → **Cypress E2E Tests** → **Run workflow**.
 
 ## 🧪 Casos de Prueba
 

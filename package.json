@@ -5,6 +5,7 @@
   "scripts": {
     "cy:open": "cypress open",
     "cy:run": "cypress run",
+    "cy:report": "cypress run",
     "cy:run:headed": "cypress run --headed",
     "cy:chrome": "cypress run --browser chrome",
     "cy:firefox": "cypress run --browser firefox"
@@ -18,7 +19,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^13.6.0"
+    "cypress": "^13.6.0",
+    "cypress-mochawesome-reporter": "^4.0.2"
   }
 }
-
