@@ -2,6 +2,19 @@
 
 Proyecto de automatización de pruebas E2E con **Cypress + JavaScript** para la aplicación [SauceDemo](https://www.saucedemo.com).
 
+<p align="center">
+  <img src="https://img.shields.io/github/actions/workflow/status/jennyloz89/cypress-login-saucedemo/cypress.yml?branch=main&style=for-the-badge" alt="CI Status" />
+  <img src="https://img.shields.io/badge/Cypress-13.6-17202C?style=for-the-badge&logo=cypress" alt="Cypress" />
+  <img src="https://img.shields.io/badge/Node.js-20+-339933?style=for-the-badge&logo=node.js" alt="Node" />
+  <img src="https://img.shields.io/github/license/jennyloz89/cypress-login-saucedemo?style=for-the-badge" alt="License" />
+</p>
+
+<p align="center">
+  <a href="https://jennyloz89.github.io/cypress-login-saucedemo/">
+    <img src="https://img.shields.io/badge/📊_Ver_Reporte-GitHub_Pages-181717?style=for-the-badge&logo=github" alt="Ver reporte" />
+  </a>
+</p>
+
 ## 📋 Características
 
 - ✅ Validación de login con credenciales válidas e inválidas
@@ -39,6 +52,7 @@ cypress-login-saucedemo/
 │
 ├── .github/workflows/                # CI/CD (GitHub Actions)
 │   └── cypress.yml
+├── docs/                             # Reporte HTML (para GitHub Pages / portafolio)
 ├── cypress.config.js                 # Configuración de Cypress
 ├── package.json                      # Dependencias
 └── README.md                         # Documentación
@@ -86,9 +100,16 @@ npm run cy:firefox
 
 ## 📊 Reportes
 
-- **Reporte HTML (Mochawesome):** Tras `npm run cy:run` o `npm run cy:report`, se genera un reporte en `cypress/reports/`. Abre el archivo HTML para ver resultados, gráficos, duración y screenshots embebidos.
+- **Reporte HTML (Mochawesome):** Tras `npm run cy:run` o `npm run cy:report`, se genera el reporte en la carpeta **`docs/`**. Abre `docs/index.html` en el navegador para ver resultados, gráficos, duración y screenshots. Esa misma carpeta se puede publicar con **GitHub Pages** para enlazar el reporte desde tu portafolio.
 - **Screenshots:** Se generan automáticamente cuando un test falla. Se guardan en `cypress/screenshots/`
 - **Videos:** Se graban automáticamente durante la ejecución en modo headless. Se guardan en `cypress/videos/`
+
+### 🌐 Ver el reporte en GitHub Pages (portafolio)
+
+1. Ejecuta las pruebas y genera el reporte: `npm run cy:run`
+2. Haz commit y push de la carpeta `docs/` (incluye el HTML del reporte)
+3. En el repo de GitHub: **Settings** → **Pages** → Source: **Deploy from a branch** → Branch: **main**, Folder: **/docs** → Save
+4. La URL será: `https://jennyloz89.github.io/cypress-login-saucedemo/` (o `.../index.html`). Usa ese enlace en tu portafolio para que al hacer clic se abra el reporte.
 
 ## 🔄 CI/CD (GitHub Actions)
 
